@@ -7,10 +7,30 @@ Plugin 'VundleVim/Vundle.vim'
 
 " 導入したいプラグインを以下に列挙
 " Plugin '[Github Author]/[Github repo]' の形式で記入
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'airblade/vim-gitgutter'
+"Plugin 'davidhalter/jedi-vim'
+
+"Plugin 'lambdalisue/vim-pyenv', {
+"        \ 'depends': ['davidhalter/jedi-vim'],
+"        \ 'autoload': {
+"        \   'filetypes': ['python', 'python3'],
+"        \ }}
+
+Plugin 'vim-syntastic/syntastic'
 
 call vundle#end()
 filetype plugin indent on
+
+
+" synstatic 
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 " setting
